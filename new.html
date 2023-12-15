@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durian Disease</title>
+    <style>
+        body {
+            background-color: green;
+            background-size: 50px 50px;
+            background-repeat: no-repeat; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        h1, p, ul {
+            color: black;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 220px;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo img {
+            margin-right: 10px;
+            width: 200px;
+            height: auto;
+        }
+
+        #headTitle {
+            margin-top: 150px; /* Jarak antara logo dan judul */
+        }
+
+        #result {
+            margin-top: 20px; /* Jarak antara hasil dan gambar */
+        }
+
+        .highlight {
+            color: black; /* Change the color as desired */
+            font-weight: bold;
+            cursor: pointer
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+    <!-- Company Logo -->
+    <div id="logo">
+        <img src="D:\DK CENTURY\Gambar penyakit\logo.png" alt="Company Logo 1">
+        <img src="D:\DK CENTURY\Gambar penyakit\logo2.png" alt="Company Logo 2">
+    </div>
+
+    <!-- Head Title -->
+    <div id="headTitle">
+        <h1>Durian Tree Disease Checker</h1>
+
+        <p>Select the durian tree condition:</p>
+
+        <!-- Leaf condition options -->
+
+        <img src="D:\DK CENTURY\Gambar penyakit\canker1.jpg" alt="Canker" style="width:245px; height:468px;" onclick="checkDisease('Canker')">
+        <img src="D:\DK CENTURY\Gambar penyakit\Bao Bao.jpg" alt="Bao Bao" style="width:245px; height:468px;" onclick="checkDisease('Bao Bao')" >
+        <img src="D:\DK CENTURY\Gambar penyakit\Mealybug.jpg" alt="Mealybug" style="width:245px; height:468px;" onclick="checkDisease('Mealybug')">
+        <img src="D:\DK CENTURY\Gambar penyakit\canker.jpg" alt="Canker" style="width:268px; height:400px;" onclick="checkDisease('Canker')">        
+        <img src="D:\DK CENTURY\Gambar penyakit\LB.jpg" alt="Leaf Blight" style="width:288px; height:388px;" onclick="checkDisease('Leaf Blight')">
+        <img src="D:\DK CENTURY\Gambar penyakit\LS.jpg" alt="Leaf Spot" style="width:558px; height:391px;" onclick="checkDisease('Leaf Spot')">
+        <img src="D:\DK CENTURY\Gambar penyakit\Anthra.jpg" alt="Anthracnose" style="width:495px; height:292px;" onclick="checkDisease('Anthracnose')">
+        <img src="D:\DK CENTURY\Gambar penyakit\Algae1.jpg" alt="Algae" style="width:197px; height:296px;" onclick="checkDisease('Algae')">
+        <img src="D:\DK CENTURY\Gambar penyakit\Algae2.jpg" alt="Algae" style="width:267px; height:298px;" onclick="checkDisease('Algae')">
+        <img src="D:\DK CENTURY\Gambar penyakit\termite.jpg" alt="Termites" style="width:249px; height:330px;" onclick="checkDisease('Termites')">
+        <img src="D:\DK CENTURY\Gambar penyakit\rr.jpg" alt="Root Rot" style="width:338px; height:468px;" onclick="checkDisease('Root Rot')">
+        <img src="D:\DK CENTURY\Gambar penyakit\frpp.jpg" alt="Fruit Rot" style="width:452px; height:421px;" onclick="checkDisease('Fruit Rot')">
+        <img src="D:\DK CENTURY\Gambar penyakit\thrips.jpg" alt="Thrips" style="width:276px; height:246px;" onclick="checkDisease('Thrips')">
+        <img src="D:\DK CENTURY\Gambar penyakit\wr.jpg" alt="White Root" style="width:403px; height:248px;" onclick="checkDisease('White Root')">        
+        <img src="D:\DK CENTURY\Gambar penyakit\frsr.jpg" alt="Fruit Rot" style="width:246px; height:274px;" onclick="checkDisease('Fruit Rot')">
+        <img src="D:\DK CENTURY\Gambar penyakit\SI.jpg" alt="Scale Insect" style="width:369px; height:272px;" onclick="checkDisease('Scale Insect')">
+        <img src="D:\DK CENTURY\Gambar penyakit\wsm.jpg" alt="White Spider Mites" style="width:159px; height:272px;" onclick="checkDisease('White Spider Mites')">
+
+
+        <!-- Display result -->
+        <div id="result"></div>
+    </div>
+
+</div>
+
+<script>
+    function checkDisease(condition) {
+        var resultElement = document.getElementById("result");
+
+        switch (condition) {
+            case 'Leaf Blight':
+                resultElement.innerHTML = "This is <span class='highlight'>leaf blight</span> disease. Here are the suggestions to counter it: <ul><li>Apply one of these fungicides to control this problem:<ul><li>Amistartop</li><li>Benocide</li></ul><li>Branches with no leaves should be pruned as it will not function anymore</li><li>Branches with many affected leaves need to be pruned also to avoid the disease further spreading to the other part.</li></ul>";
+                break;
+            case 'Leaf Spot':
+                resultElement.innerHTML = "This is <span class='highlight'> leaf spot</span> disease. Apply one of these fungicides to counter it:<ul><li>Dithane NT</li><li>Fenprozole</li><li>Folicur</li></ul>";
+                break;
+            case 'Anthracnose':
+                resultElement.innerHTML = "This is <span class='highlight'> leaf anthracnose</span> disease. Here are the suggestions to counter it: <ul><li>Apply good agricultural practices.</li><li>Apply one of these fungicide when disease start to spread:</li><ul><li>Bio-copper</li><li>Score syngenta</li><li>Dithane NT</li></ul><li>Pruning infected leaf</li></ul>";
+                break;
+            case 'Algae':
+                resultElement.innerHTML = "This is <span class='highlight'> algae</span> infestation. Apply one of this chemical as foliar spray and drenching:<ul><li>Bio-copper</li><li>Benocide</li><li>Fento</li></ul>";
+                break;
+            case 'Bao Bao':
+                resultElement.innerHTML = "This is <span class='highlight'> Bao Bao (durian psyllids)</span> infestation. Apply one of these pesticides: <ul><li>BM Imidal</li><li>Decis 250</li><li>Alika ZC</li></ul>";
+                break;
+            case 'Canker':
+                resultElement.innerHTML = "This is <span class='highlight'> canker</span> disease. Here are the suggestions to counter it: <ul><li>Scrap the infected area.</li><li>Apply fungicide at the infected area through paint or injection. Example for the fungicide: <ul><li>Ridomil</li> <li>Aliette</li></ul></li><li>Inject or drench fungicides around the tree canopy and nearby trees.</li><li>Ensure minimal weed around the tree to avoid high moisture.</li></ul>";
+                break;
+            case 'Termites':
+                resultElement.innerHTML = "This is <span class='highlight'> termites</span>. Apply one of these pesticides: <ul><li>Regent 50SC </li><li>BM Imidal</li><li>Cofenrin 10EC</li></ul> ";
+                break;
+            case 'Root Rot':
+                resultElement.innerHTML = "This tree having <span class='highlight'> root rot</span> problem. Here are the suggestions to improve it:<ul><li>Soil structure needs to be improved by doing mounding in order to lose the soil.</li><li>Apply this chemical solution as drenching:</li><ul><li>Ridomil (metalaxyl) + Calcium</li><li>Nanoca</li><li>P400 + Abado (dimethomorph) + NPK fertiliser</li></ul><li>Provide trench.</li></ul>";
+                break;
+            case 'White Root':
+                resultElement.innerHTML = "This tree having <span class='highlight'> white root</span> disease. Here are the suggestions to counter it: <ul><li>Any rubber, cassava, and jungle tree waste should be burned</li><li>Infected tree must be removed and burned</li><li>Drench plant hole with one of theses fungicide:</li><ul><li>Propiconazole + Sulphur</li><li>Tridemorph + Sulphur</li></ul></ul>";
+                break;
+            case 'Thrips':
+                resultElement.innerHTML = "This is <span class='highlight'> thrips</span>. There are few ways to control this pest infestation. Those methods are:<ul><li>Apply on of these pesticides:</li><ul><li>BM Imidal</li><li>Clipper 20SL</li><li>Alika ZC</li></ul><li>Introduce natural predators such as:</li><ul><li>predator mites</li><li>ladybugs</li></ul><li>Apply neem oil.</li><li>Apply insecticidal soap.</li></ul>";
+                break;
+            case 'Fruit Rot':
+                resultElement.innerHTML = "This disease called <span class='highlight'> fruit rot</span>. Apply one of these fungicides in order to control it:<ul><li>Dithane NT </li><li>Captaf</li></ul>Besides, make sure under the durian canopy there is no unwanted (unmatured, old, rotten, unintentional falling durian) fruit left";
+                break;
+            case 'Mealybug':
+                resultElement.innerHTML = "This is <span class='highlight'> mealybug</span> infestation. Apply one of these pesticides to control the problem: <ul><li>Albarol + Dimet 40</li><li>Albarol + MAPA Malathion 57</li></ul>Remove and burn the attacked fruit to prevent spreading to other trees.";
+                break;
+            case 'Scale Insect':
+                resultElement.innerHTML = "This is <span class='highlight'> scale insect</span>. Here are the suggestions to counter it: <ul><li> Remove and burn  the leaf that has already been attacked by the insect.</li><li> Apply one of these pesticides:</li><ul><li>Albarol + Envoy 1.8EC</li><li>Dimet 40</li></ul></ul>";
+                break;
+            case 'White Spider Mites':
+                resultElement.innerHTML = "This is <span class='highlight'> white spider mites</span>. Here are the suggestions to counter it:<ul><li>  Eliminate all the plant residues, especially attacked leaves to reduce the further relapse of attack. </li><li> Apply one of these pesticides to counter it: </li><ul><li>Amitraz</li><li>Abamectin</li><li>Dimethoate or neem oil</li></ul></ul> ";
+                break;
+
+            default:
+                resultElement.innerHTML = "Please select durian tree condition.";
+        }
+	//Gulung ke bahagian hasil
+        resultElement.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
